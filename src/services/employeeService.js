@@ -48,7 +48,7 @@ class EmployeeService {
                 if(lastEmployee?.employeeId){
                     lastId = Number(lastEmployee?.employeeId.replace('E', ''))
                 }
-                updates.employeeId = 'E' + lastId + 1;
+                updates.employeeId = 'E' + (lastId + 1);
             }
             await this.employeeDirectory.updateOne({ employeeId }, updates);
             return this.getEmployeeById(updates.employeeId || employeeId);
