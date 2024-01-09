@@ -43,8 +43,12 @@ class EmployeeService {
         const employee = await this.getEmployeeById(employeeId);
         if (employee) {
             if (updates.onBoarding && !employee.onBoarding) {
-                const { employeeId: lastId } = await this.getLastEmployeeId(updates.onBoarding);
-                updates.employeeId = 'E' + (Number(lastId.replace('E', '')) + 1);
+                const lastEmployee = await this.getLastEmployeeId(updates.onBoarding);
+                let lastId = 0
+                if(lastEmployee?.employeeId){
+                    lastId = Number(lastEmployee?.employeeId.replace('E', ''))
+                }
+                updates.employeeId = 'E' + lastId + 1;
             }
             await this.employeeDirectory.updateOne({ employeeId }, updates);
             return this.getEmployeeById(updates.employeeId || employeeId);
