@@ -44,7 +44,7 @@ class EmployeeService {
         if (employee) {
             if (updates.onBoarding && !employee.onBoarding) {
                 const lastEmployee = await this.getLastEmployeeId(updates.onBoarding);
-                let lastId = 0
+                let lastId =  19000
                 if(lastEmployee?.employeeId){
                     lastId = Number(lastEmployee?.employeeId.replace('E', ''))
                 }
