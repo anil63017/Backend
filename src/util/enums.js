@@ -1,0 +1,29 @@
+const ROLES = {
+    ADMIN: 'ADMIN',
+    MANAGER: 'MANAGER',
+    ACCOUNTS: 'ACCOUNTS',
+    IMMIGRATION: 'IMMIGRATION',
+    HR: 'HR',
+}
+
+const EMP_STATUS = {
+    ACTIVE: 'ACTIVE',
+    INACTIVE: 'INACTIVE'
+}
+
+const WORK_LOCATION = {
+    OFFICE: 'OFFICE',
+    REMOTE: 'REMOTE'
+}
+
+const JOB_TYPE = {
+    PRIMARY: 'PRIMARY',
+    SECONDARY: 'SECONDARY',
+}
+
+module.exports = {
+    ROLES,
+    EMP_STATUS,
+    WORK_LOCATION,
+    JOB_TYPE
+}
